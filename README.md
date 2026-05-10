@@ -1,15 +1,15 @@
-# 🚀 PrepWise — AI Powered Interview Preparation Platform
+# 🚀 Syntra — AI Powered Interview Preparation Platform
 
 <div align="center">
 
-<img src="./public/logo.svg" width="140" alt="PrepWise Logo" />
+<img src="./public/logo.svg" width="140" alt="Syntra Logo" />
 
 <br/>
 <br/>
 
 ### ✨ Crack Interviews with Real-Time Conversational AI
 
-**PrepWise** is a modern AI-powered mock interview platform that helps developers and students practice technical interviews through immersive voice conversations, intelligent feedback systems, and AI-generated assessments.
+**Syntra** is a modern AI-powered mock interview platform that helps developers and students practice technical interviews through immersive voice conversations, intelligent feedback systems, and AI-generated assessments.
 
 Built with a cutting-edge stack including **Next.js**, **TypeScript**, **Firebase**, **Vapi AI**, and **Google AI SDK**.
 
@@ -29,9 +29,9 @@ Built with a cutting-edge stack including **Next.js**, **TypeScript**, **Firebas
 
 # 🌌 Overview
 
-PrepWise is designed to simulate realistic technical interviews using conversational AI.
+Syntra is designed to simulate realistic technical interviews using conversational AI.
 
-Instead of static MCQs or generic interview questions, PrepWise creates a **human-like interview experience** where users can:
+Instead of static MCQs or generic interview questions, Syntra creates a **human-like interview experience** where users can:
 
 - 🎙️ Talk with AI interviewers in real-time
 - 🧠 Receive dynamic follow-up questions
@@ -48,7 +48,7 @@ The platform focuses on creating a highly immersive environment for interview pr
 
 ## 🎤 AI Conversational Interviews
 
-Powered by **Vapi.ai**, PrepWise enables voice-based interactive mock interviews directly in the browser.
+Powered by **Vapi.ai**, Syntra enables voice-based interactive mock interviews directly in the browser.
 
 ### Features
 
@@ -84,7 +84,7 @@ Users can generate personalized interview sessions based on:
 
 ## 📊 AI Feedback & Assessment Engine
 
-After each interview session, PrepWise generates comprehensive AI-powered evaluations.
+After each interview session, Syntra generates comprehensive AI-powered evaluations.
 
 ### Evaluation Metrics
 
@@ -109,7 +109,7 @@ After each interview session, PrepWise generates comprehensive AI-powered evalua
 
 ## 👤 Authentication & User Management
 
-PrepWise uses **Firebase Authentication** for secure user management.
+Syntra uses **Firebase Authentication** for secure user management.
 
 ### Features
 
@@ -178,7 +178,7 @@ Firebase            AI Services
 # 📂 Project Structure
 
 ```bash
-PrepWise/
+Syntra/
 │
 ├── app/                  # Next.js App Router
 ├── components/           # Reusable UI Components
@@ -198,7 +198,7 @@ PrepWise/
 
 ## ⚡ Next.js
 
-PrepWise uses Next.js App Router architecture to provide:
+Syntra uses Next.js App Router architecture to provide:
 
 - Server Components
 - Fast Rendering
@@ -273,8 +273,8 @@ Detailed Feedback Report
 ## 📦 Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/prepwise.git
-cd prepwise
+git clone https://github.com/yourusername/syntra.git
+cd syntra
 ```
 
 ---
@@ -356,7 +356,7 @@ interface Feedback {
 
 # 🎨 UI Highlights
 
-PrepWise includes:
+Syntra includes:
 
 - 🌌 Beautiful gradient aesthetics
 - 📱 Fully responsive layouts
@@ -413,9 +413,9 @@ npm run lint
 
 ---
 
-# 🌟 Why PrepWise?
+# 🌟 Why Syntra?
 
-PrepWise is not just another mock interview platform.
+Syntra is not just another mock interview platform.
 
 It creates a realistic AI-powered interview ecosystem where users can:
 
