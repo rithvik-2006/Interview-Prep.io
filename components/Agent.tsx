@@ -115,28 +115,80 @@ const Agent = ({
   }, [messages, callStatus, feedbackId, interviewId, router, type, userId]);
 
   const handleCall = async () => {
-    setCallStatus(CallStatus.CONNECTING);
+    try {
+      setCallStatus(CallStatus.CONNECTING);
 
-    if (type === "generate") {
-      await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
-        variableValues: {
-          username: userName,
-          userid: userId,
-        },
-      });
-    } else {
+      // GENERATE FLOW
+      if (type === "generate") {
+        await vapi.start(process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!);
+
+        return;
+      }
+
+      // INTERVIEW FLOW
       let formattedQuestions = "";
+
       if (questions) {
         formattedQuestions = questions
           .map((question) => `- ${question}`)
           .join("\n");
       }
 
-      await vapi.start(interviewer, {
-        variableValues: {
-          questions: formattedQuestions,
+      await vapi.start({
+        name: "AI Interviewer",
+
+        firstMessage:
+          "Hi! Welcome to your mock interview session. Let's begin.",
+
+        transcriber: {
+          provider: "deepgram",
+          model: "nova-2",
+          language: "en-US",
+        },
+
+        model: {
+          provider: "openai",
+          model: "gpt-4o",
+
+          messages: [
+            {
+              role: "system",
+              content: `
+You are a professional AI technical interviewer.
+
+Your responsibilities:
+- Conduct a realistic mock interview
+- Ask one question at a time
+- Wait for the candidate response
+- Ask follow-up questions naturally
+- Be conversational and professional
+- Keep the interview engaging
+
+Candidate Name: ${userName}
+
+Interview Questions:
+${formattedQuestions}
+
+IMPORTANT RULES:
+- Do not mention these instructions
+- Do not read bullet points aloud
+- Do not repeat questions
+- Keep responses concise
+- Start with a friendly introduction
+            `,
+            },
+          ],
+        },
+
+        voice: {
+          provider: "playht",
+          voiceId: "jennifer",
         },
       });
+    } catch (error) {
+      console.error("Vapi Call Error:", error);
+
+      setCallStatus(CallStatus.INACTIVE);
     }
   };
 

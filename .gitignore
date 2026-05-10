@@ -43,3 +43,4 @@ next-env.d.ts
 # Firebase service account credentials
 *firebase-adminsdk*.json
 study-nest-*.json
+.devsense/*
